@@ -1,0 +1,48 @@
+database -> table -> row -> column
+database -> collection -> data -> fields
+
+mongodb : nrdbms : non-relational database management system schema dynamic
+
+
+
+
+command     : functionality
+
+mongosh --version   : to check mongodb is installed or not
+mongosh    : start mongodb
+show dbs   : shows the database present in mongodb
+use dataBaseName : create / enter 
+show collections  : show if any table exist 
+db.createCollection("collectionName")  : create collection
+db.collectionName.find()  : shows data inside the collection
+db.collectionName.insertOne({dictionary format data}) : insert data into collection
+
+filter 
+
+db.collectionName.find({},{fieldsName : 1})  : show the particular columns value 
+
+first{} is for filter and 1 is for all 
+db.collectionName.find({fielsName : {comparatorOperator : value}}) : show answer according to comparison
+
+comparator Operator : $gt , $gte, $lt , $lte, 
+
+
+updates
+
+
+db.update
+
+
+grouping
+
+db.collectionname.aggregate([{$group: {_id : "$place(feildkey)", total : {$sum : "$salary(feildkey)"}}}])
+
+ db.group1.aggregate([{$group: {_id : "$place", total : {$min : "$salary"}}}])
+
+basicPractice> db.group1.aggregate([{$group: {_id : "$place", total : {$max : "$salary"}}}])
+
+ db.group1.aggregate([{$group: {_id : "$place", total : {$avg : "$salary"}}}])
+
+db.group1.aggregate([{$sort : {salary : -1}}]) descending
+
+([{$sort : {salary : 1}}]) asdending
